@@ -33,5 +33,5 @@ def abrirNoticiasJaeNoticia(message):
   response=arapiracanews.comandoNews('Já é notícia News\n\n')
   bot.send_message(message.chat.id, response)
 
-bot.polling()
+bot.infinity_polling(50)
 
