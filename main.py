@@ -1,8 +1,8 @@
 import telebot
-import api
+import os
 import arapiracanews
 
-API_KEY = api.getApi()
+API_KEY = os.environ["API_TELEGRAM_BOT"]
 bot = telebot.TeleBot(API_KEY)
 msg='Olá, eu sou o ArapiracaNewsBot'
 msg2='Criado por Eduardo Vítor, meu objetivo é fornecer as principais notícias dos jornais de Arapiraca de forma simples e sem esforço',
