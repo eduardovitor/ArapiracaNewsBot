@@ -1,4 +1,6 @@
 import unittest
+import sys
+sys.path.append('..')
 from arapiracanews import jaenoticiaNews
 import validators
 
