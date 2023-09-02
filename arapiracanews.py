@@ -22,15 +22,12 @@ def diarioArapiracaNews():
   doc_html=requests.get(url,headers=HEADERS)
   soup_html=BeautifulSoup(doc_html.content,'html.parser')
   noticias_ids=soup_html.findAll('i',class_='numero')
-  tags_links_noticias=[]
   pacotes=[]
   dict={}
   for noticia_id in noticias_ids:
-    tags_links_noticias.append(noticia_id.parent)
-  for tag in tags_links_noticias:
-    link=tag['href']
+    link=noticia_id.parent["href"]
     link=removerAspasEspeciais(link)
-    titulo=tag.findChild('span').text
+    titulo=noticia_id.parent.findChild('span').text
     dict={'link':link,'titulo':titulo}
     pacotes.append(dict)
   return pacotes
