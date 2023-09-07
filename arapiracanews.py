@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
-HEADERS={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 OPR/86.0.4363.59'}
+HEADERS={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'}
 
 
 def removerAspasEspeciais(link):
@@ -20,7 +20,7 @@ def removerAspasEspeciais(link):
 def diarioArapiracaNews():
   url='https://diarioarapiraca.com.br'
   doc_html=requests.get(url,headers=HEADERS)
-  soup_html=BeautifulSoup(doc_html.content,'html.parser')
+  soup_html=BeautifulSoup(doc_html.content,'lxml')
   noticias_ids=soup_html.findAll('i',class_='numero')
   pacotes=[]
   dict={}
