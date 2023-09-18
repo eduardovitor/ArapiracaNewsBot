@@ -36,7 +36,7 @@ def diarioArapiracaNews():
 def site_sete_segundos_News():
   url='https://www.7segundos.com.br/arapiraca'
   doc_html=requests.get(url,headers=HEADERS)
-  soup_html=BeautifulSoup(doc_html.content,'html.parser')
+  soup_html=BeautifulSoup(doc_html.content,'lxml')
   noticias=soup_html.find('div',class_='hero-banner-slider')
   tag_links=noticias.find_all('a')
   dict={}
@@ -54,7 +54,7 @@ def site_sete_segundos_News():
 def jaenoticiaNews():
   url='https://www.jaenoticia.com.br'
   doc_html=requests.get(url,headers=HEADERS)
-  soup_html=BeautifulSoup(doc_html.content,'html.parser')
+  soup_html=BeautifulSoup(doc_html.content,'lxml')
   noticias=soup_html.find('section',class_='section hero-banner')
   slides=noticias.find('div',class_='col-12 col-sm-12 col-md-7')
   tag_links=slides.find_all('a')
