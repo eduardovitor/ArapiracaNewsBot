@@ -19,18 +19,18 @@ def help(message):
   bot.send_message(message.chat.id, msg3)
 
 @bot.message_handler(commands=['diarioArapiraca'])
-def abrirNoticiasDiario(message):
-  response=arapiracanews.comandoNews("Diário Arapiraca News\n\n")
+def abrir_noticias_diario(message):
+  response=arapiracanews.comando_news("Diário Arapiraca News\n\n")
   bot.send_message(message.chat.id, response)
 
 @bot.message_handler(commands=['7segundos'])
-def abrirNoticias7segundos(message):
-  response=arapiracanews.comandoNews("7 segundos News\n\n")
+def abrir_noticias_7segundos(message):
+  response=arapiracanews.comando_news("7 segundos News\n\n")
   bot.send_message(message.chat.id, response)
 
 @bot.message_handler(commands=['jaenoticia'])
-def abrirNoticiasJaeNoticia(message):
-  response=arapiracanews.comandoNews("Já é notícia News\n\n")
+def abrir_noticias_ja_e_noticia(message):
+  response=arapiracanews.comando_news("Já é notícia News\n\n")
   bot.send_message(message.chat.id, response)
 
 bot.infinity_polling(50)
