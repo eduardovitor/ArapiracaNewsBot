@@ -72,15 +72,7 @@ def ja_e_noticia_news():
     pacotes.append(dict)
   return pacotes
 
-
-def comando_news(site):
-  if site=="Já é notícia News\n\n":
-    pacotes=ja_e_noticia_news()
-  elif site=="7 segundos News\n\n":
-    pacotes=site_sete_segundos_news()
-  elif site=="Diário Arapiraca News\n\n":
-    pacotes=diario_arapiraca_news()
-
+def formatar_msg(pacotes,site):
   dic_length=len(pacotes)
   i=0
   news_report=[]
@@ -89,4 +81,14 @@ def comando_news(site):
     news_report.append("{}\n\n{}\n\n".format(pacotes[i]['titulo'],pacotes[i]['link']))
     i+=1
   msg="".join(news_report)
+  return msg
+
+def comando_news(site):
+  if site=="Já é notícia News\n\n":
+    pacotes=ja_e_noticia_news()
+  elif site=="7 segundos News\n\n":
+    pacotes=site_sete_segundos_news()
+  elif site=="Diário Arapiraca News\n\n":
+    pacotes=diario_arapiraca_news()
+  msg = formatar_msg(pacotes,site)
   return msg
