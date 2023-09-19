@@ -5,6 +5,7 @@ HEADERS={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537
 
 
 def removerAspasEspeciais(link):
+  """Essa função existe para remover padrões esquisitos de aspas existentes em alguns links dos sites de notícias"""
   aspas_especial="‘"
   aspas_especial2="’"
   aspas="'"
@@ -18,6 +19,7 @@ def removerAspasEspeciais(link):
   return fixed_link
 
 def diarioArapiracaNews():
+  """Scraping de notícias do portal Diário Arapiraca"""
   url='https://diarioarapiraca.com.br'
   doc_html=requests.get(url,headers=HEADERS)
   soup_html=BeautifulSoup(doc_html.content,'lxml')
@@ -34,6 +36,7 @@ def diarioArapiracaNews():
 
 
 def site_sete_segundos_News():
+  """Scraping de notícias do portal 7 segundos"""
   url='https://www.7segundos.com.br/arapiraca'
   doc_html=requests.get(url,headers=HEADERS)
   soup_html=BeautifulSoup(doc_html.content,'lxml')
@@ -52,6 +55,7 @@ def site_sete_segundos_News():
 
 
 def jaenoticiaNews():
+  """Scraping de notícias do portal Já é notícia"""
   url='https://www.jaenoticia.com.br'
   doc_html=requests.get(url,headers=HEADERS)
   soup_html=BeautifulSoup(doc_html.content,'lxml')
