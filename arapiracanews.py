@@ -4,7 +4,7 @@ import requests
 HEADERS={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'}
 
 
-def removerAspasEspeciais(link):
+def remover_aspas_especiais(link):
   """Essa função existe para remover padrões esquisitos de aspas existentes em alguns links dos sites de notícias"""
   aspas_especial="‘"
   aspas_especial2="’"
@@ -18,7 +18,7 @@ def removerAspasEspeciais(link):
   fixed_link="".join(link_list)
   return fixed_link
 
-def diarioArapiracaNews():
+def diario_arapiraca_news():
   """Scraping de notícias do portal Diário Arapiraca"""
   url='https://diarioarapiraca.com.br'
   doc_html=requests.get(url,headers=HEADERS)
@@ -28,14 +28,14 @@ def diarioArapiracaNews():
   dict={}
   for noticia_id in noticias_ids:
     link=noticia_id.parent["href"]
-    link=removerAspasEspeciais(link)
+    link=remover_aspas_especiais(link)
     titulo=noticia_id.parent.findChild('span').text
     dict={'link':link,'titulo':titulo}
     pacotes.append(dict)
   return pacotes
 
 
-def site_sete_segundos_News():
+def site_sete_segundos_news():
   """Scraping de notícias do portal 7 segundos"""
   url='https://www.7segundos.com.br/arapiraca'
   doc_html=requests.get(url,headers=HEADERS)
@@ -47,14 +47,14 @@ def site_sete_segundos_News():
   for tag in tag_links:
     link=tag['href']
     link=link[2:]
-    link=removerAspasEspeciais(link)
+    link=remover_aspas_especiais(link)
     titulo=tag.findChild('h1').text
     dict={'link':link,'titulo':titulo}
     pacotes.append(dict)
   return pacotes
 
 
-def jaenoticiaNews():
+def ja_e_noticia_news():
   """Scraping de notícias do portal Já é notícia"""
   url='https://www.jaenoticia.com.br'
   doc_html=requests.get(url,headers=HEADERS)
@@ -66,20 +66,20 @@ def jaenoticiaNews():
   pacotes=[]
   for tag in tag_links:
     link=tag['href']
-    link=removerAspasEspeciais(link)
+    link=remover_aspas_especiais(link)
     titulo=tag.findChild('h1').text
     dict={'link':link,'titulo':titulo}
     pacotes.append(dict)
   return pacotes
 
 
-def comandoNews(site):
+def comando_news(site):
   if site=="Já é notícia News\n\n":
-    pacotes=jaenoticiaNews()
+    pacotes=ja_e_noticia_news()
   elif site=="7 segundos News\n\n":
-    pacotes=site_sete_segundos_News()
+    pacotes=site_sete_segundos_news()
   elif site=="Diário Arapiraca News\n\n":
-    pacotes=diarioArapiracaNews()
+    pacotes=diario_arapiraca_news()
 
   dic_length=len(pacotes)
   i=0
