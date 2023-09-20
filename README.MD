@@ -4,7 +4,7 @@
 
 ## 📖 Descrição
 
-![arapiracanewsbot](ArapiracaNewsBot.gif)
+![arapiracanewsbot](arapiracanewsbot.gif)
 
 A ideia por trás do bot é extrair notícias dos principais portais de notícias de Arapiraca: [Diário Arapiraca](https://diarioarapiraca.com.br/), [7 segundos](https://www.7segundos.com.br/arapiraca) e [Já é notícia](https://www.jaenoticia.com.br/). O projeto surgiu da necessidade de facilitar o acesso a notícias de Arapiraca a partir de um único lugar em um formato acessível (mensagens).
 
@@ -20,7 +20,7 @@ A ideia por trás do bot é extrair notícias dos principais portais de notícia
 
 - Extração de notícias do slideshow do [7 segundos](https://www.7segundos.com.br/arapiraca) por meio do comando ```/7segundos```;
 - Extração de notícias do slideshow do [Já é notícia](https://www.jaenoticia.com.br/) por meio do comando ```/jaenoticia```;
-- Extração das notícias mais lidas do [Diário Arapiraca](https://diarioarapiraca.com.br/) por meio do comando ```/diarioArapiraca```.
+- Extração das notícias mais lidas do [Diário Arapiraca](https://diarioarapiraca.com.br/) por meio do comando ```/diarioarapiraca```.
 
 
 
