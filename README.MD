@@ -38,21 +38,16 @@ Esse projeto foi desenvolvido usando a linguagem de programação [Python](https
 
 O projeto usa testes unitários para garantir a confiabilidade dos dados das notícias por meio das bibliotecas [unittest](https://docs.python.org/3/library/unittest.html) e [validators](https://pypi.org/project/validators/).
 
-Para testar o scraper de notícias, você precisa instalar o BeautifulSoup e a biblioteca requests. 
+Para trabalhar no projeto, você precisa instalar as dependências. 
 
 <br>
 
-Instalação da lib **Beautiful Soup**
+Instalação das dependências
 
 ```
-pip install bs4
+pip install -r requirements.txt
 ```
 
-Instalação da lib **requests**
-
-```
-pip install requests
-```
 <br>
 
 <br/>
