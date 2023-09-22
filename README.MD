@@ -14,7 +14,7 @@ A ideia por trás do bot é extrair notícias dos principais portais de notícia
 
 - ```arapiracanews.py```: arquivo que contém todas as funções de scraping;
 
-- ```/test```: diretório que contém testes unitários para as funções de scraping;
+- ```/test```: diretório que contém testes unitários para funções auxiliares ao scraping;
 
 ## 🛠️ Funcionalidades
 
