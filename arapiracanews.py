@@ -31,7 +31,7 @@ def diario_arapiraca_news():
     link=noticia_id.parent["href"]
     link=remover_aspas_especiais(link)
     titulo=noticia_id.parent.findChild('span').text
-    if validarDados(link,titulo):
+    if validar_dados(link,titulo):
       dict={'link':link,'titulo':titulo}
       pacotes.append(dict)
   return pacotes
@@ -51,7 +51,7 @@ def site_sete_segundos_news():
     link=link[2:]
     link=remover_aspas_especiais(link)
     titulo=tag.findChild('h1').text
-    if validarDados("https://www.{}".format(link),titulo):
+    if validar_dados("https://www.{}".format(link),titulo):
       dict={'link':link,'titulo':titulo}
       pacotes.append(dict)
   return pacotes
@@ -71,7 +71,7 @@ def ja_e_noticia_news():
     link=tag['href']
     link=remover_aspas_especiais(link)
     titulo=tag.findChild('h1').text
-    if validarDados(link,titulo):
+    if validar_dados(link,titulo):
       dict={'link':link,'titulo':titulo}
       pacotes.append(dict)
   return pacotes
@@ -87,7 +87,7 @@ def formatar_msg(pacotes,site):
   msg="".join(news_report)
   return msg
 
-def validarDados(link,titulo):
+def validar_dados(link,titulo):
     return validators.url(link) and len(titulo) > 0
 
 def comando_news(site):
