@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import validators
 
 HEADERS={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'}
 
@@ -30,8 +31,9 @@ def diario_arapiraca_news():
     link=noticia_id.parent["href"]
     link=remover_aspas_especiais(link)
     titulo=noticia_id.parent.findChild('span').text
-    dict={'link':link,'titulo':titulo}
-    pacotes.append(dict)
+    if validarDados(link,titulo):
+      dict={'link':link,'titulo':titulo}
+      pacotes.append(dict)
   return pacotes
 
 
@@ -49,8 +51,9 @@ def site_sete_segundos_news():
     link=link[2:]
     link=remover_aspas_especiais(link)
     titulo=tag.findChild('h1').text
-    dict={'link':link,'titulo':titulo}
-    pacotes.append(dict)
+    if validarDados("https://www.{}".format(link),titulo):
+      dict={'link':link,'titulo':titulo}
+      pacotes.append(dict)
   return pacotes
 
 
@@ -68,8 +71,9 @@ def ja_e_noticia_news():
     link=tag['href']
     link=remover_aspas_especiais(link)
     titulo=tag.findChild('h1').text
-    dict={'link':link,'titulo':titulo}
-    pacotes.append(dict)
+    if validarDados(link,titulo):
+      dict={'link':link,'titulo':titulo}
+      pacotes.append(dict)
   return pacotes
 
 def formatar_msg(pacotes,site):
@@ -82,6 +86,9 @@ def formatar_msg(pacotes,site):
     i+=1
   msg="".join(news_report)
   return msg
+
+def validarDados(link,titulo):
+    return validators.url(link) and len(titulo) > 0
 
 def comando_news(site):
   if site=="Já é notícia News\n\n":
