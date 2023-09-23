@@ -74,7 +74,7 @@ def ja_e_noticia_news():
     if validar_dados(link,titulo):
       dict={'link':link,'titulo':titulo}
       pacotes.append(dict)
-  return pacotes if len(pacotes)>0 else "Não há notícias no slideshow do 7segundos"
+  return pacotes if len(pacotes)>0 else "Não há notícias no slideshow do Já é notícia"
 
 def formatar_msg(pacotes,site):
   if isinstance(pacotes, str):
@@ -102,3 +102,4 @@ def comando_news(site):
     pacotes=diario_arapiraca_news()
   msg = formatar_msg(pacotes,site)
   return msg
+
