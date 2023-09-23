@@ -34,7 +34,7 @@ def diario_arapiraca_news():
     if validar_dados(link,titulo):
       dict={'link':link,'titulo':titulo}
       pacotes.append(dict)
-  return pacotes
+  return pacotes if len(pacotes)>0 else "As notícias mais lidas não estão disponíveis no site agora. Tente novamente mais tarde"
 
 
 def site_sete_segundos_news():
@@ -54,7 +54,7 @@ def site_sete_segundos_news():
     if validar_dados("https://www.{}".format(link),titulo):
       dict={'link':link,'titulo':titulo}
       pacotes.append(dict)
-  return pacotes
+  return pacotes if len(pacotes)>0 else "Não há notícias no slideshow do 7segundos"
 
 
 def ja_e_noticia_news():
@@ -74,17 +74,20 @@ def ja_e_noticia_news():
     if validar_dados(link,titulo):
       dict={'link':link,'titulo':titulo}
       pacotes.append(dict)
-  return pacotes
+  return pacotes if len(pacotes)>0 else "Não há notícias no slideshow do 7segundos"
 
 def formatar_msg(pacotes,site):
-  dic_length=len(pacotes)
-  i=0
-  news_report=[]
-  news_report.append(site)
-  while(i<dic_length):
-    news_report.append("{}\n\n{}\n\n".format(pacotes[i]['titulo'],pacotes[i]['link']))
-    i+=1
-  msg="".join(news_report)
+  if isinstance(pacotes, str):
+    return pacotes
+  else:
+    dic_length=len(pacotes)
+    i=0
+    news_report=[]
+    news_report.append(site)
+    while(i<dic_length):
+      news_report.append("{}\n\n{}\n\n".format(pacotes[i]['titulo'],pacotes[i]['link']))
+      i+=1
+    msg="".join(news_report)
   return msg
 
 def validar_dados(link,titulo):
