@@ -93,13 +93,3 @@ def formatar_msg(pacotes,site):
 def validar_dados(link,titulo):
     return validators.url(link) and len(titulo) > 0
 
-def comando_news(site):
-  if site=="Já é notícia News\n\n":
-    pacotes=ja_e_noticia_news()
-  elif site=="7 segundos News\n\n":
-    pacotes=site_sete_segundos_news()
-  elif site=="Diário Arapiraca News\n\n":
-    pacotes=diario_arapiraca_news()
-  msg = formatar_msg(pacotes,site)
-  return msg
-
