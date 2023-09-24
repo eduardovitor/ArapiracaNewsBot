@@ -36,7 +36,7 @@ A ideia por trás do bot é extrair notícias dos principais portais de notícia
 
 Esse projeto foi desenvolvido usando a linguagem de programação [Python](https://www.python.org/) usando as bibliotecas [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) para scraping dos dados dos sites de notícias e a [pyTelegramBotAPI](https://pypi.org/project/pyTelegramBotAPI/) para execução do bot do Telegram.
 
-O projeto usa testes unitários para garantir a confiabilidade dos dados das notícias por meio das bibliotecas [unittest](https://docs.python.org/3/library/unittest.html) e [validators](https://pypi.org/project/validators/).
+O projeto usa testes unitários para garantir a confiabilidade dos dados das notícias por meio das bibliotecas [unittest](https://docs.python.org/3/library/unittest.html) e [validators](https://pypi.org/project/validators/). Além disso, o projeto utiliza um cache TTL (Time to Live) da biblioteca [cachetools](https://pypi.org/project/cachetools/) simples para manter notícias recentes guardadas em memória, evitando assim um consumo excessivo de recursos de rede no servidor onde o bot está executando.
 
 Para trabalhar no projeto, você precisa instalar as dependências. 
 
@@ -75,6 +75,8 @@ No momento, o único colaborador desse projeto sou eu (Eduardo Vítor).
 [unittest](https://docs.python.org/3/library/unittest.html)
 
 [validators](https://pypi.org/project/validators/)
+
+[cachetools](https://pypi.org/project/cachetools/)
 
 [Diário Arapiraca](https://diarioarapiraca.com.br/)
 
