@@ -38,17 +38,7 @@ Esse projeto foi desenvolvido usando a linguagem de programação [Python](https
 
 O projeto usa testes unitários para garantir a confiabilidade dos dados das notícias por meio das bibliotecas [unittest](https://docs.python.org/3/library/unittest.html) e [validators](https://pypi.org/project/validators/). Além disso, o projeto utiliza um cache TTL (Time to Live) da biblioteca [cachetools](https://pypi.org/project/cachetools/) simples para manter notícias recentes guardadas em memória, evitando assim um consumo excessivo de recursos de rede no servidor onde o bot está executando.
 
-Para trabalhar no projeto, você precisa instalar as dependências. 
-
-<br>
-
-Instalação das dependências
-
-```
-pip install -r requirements.txt
-```
-
-<br>
+Para detalhes de como contribuir para o projeto, verifique o arquivo [CONTRIBUTING.MD](CONTRIBUTING.MD).
 
 <br/>
 
