@@ -30,5 +30,5 @@ python3 arapiracanews.py
 5. Por fim, verifique se seu código passa nos testes unitários do projeto ao executar:
 
 ``` console
-python3 tests_suite.py
+python3 test/tests_suite.py
 ```
