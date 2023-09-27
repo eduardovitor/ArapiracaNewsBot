@@ -32,3 +32,5 @@ python3 arapiracanews.py
 ``` console
 python3 test/tests_suite.py
 ```
+
+Obs: Após a aprovação do PR, a funcionalidade será incorporada por mim (Eduardo Vítor) no ```main.py``` que contém a comunicação do bot com a API do Telegram e os comandos que podem ser acessados por meio do bot.
