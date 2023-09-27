@@ -15,7 +15,7 @@ git clone <repositorio_fork>
 cd ArapiracaNewsBot
 ```
 
-2. Instale as [bibliotecas requeridas](querido-diario/data_collection/requirements-dev.txt).
+2. Instale as [bibliotecas requeridas](https://github.com/eduardovitor/ArapiracaNewsBot/blob/master/requirements.txt).
 ``` console
 pip install -r requirements.txt
 ```
