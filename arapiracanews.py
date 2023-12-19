@@ -38,9 +38,9 @@ def diario_arapiraca_news():
         if validar_dados(link, titulo):
             dict = {'link': link, 'titulo': titulo}
             pacotes.append(dict)
-    return pacotes if len(pacotes) > 0 else """As notícias mais lidas não estão
-                                              disponíveis no site agora.
-                                              Tente novamente mais tarde"""
+    return pacotes if len(pacotes) > 0 else """As notícias mais lidas não \
+estão disponíveis no site agora. \
+Tente novamente mais tarde."""
 
 
 def site_sete_segundos_news():
@@ -61,7 +61,7 @@ def site_sete_segundos_news():
             dict = {'link': link, 'titulo': titulo}
             pacotes.append(dict)
     return pacotes if len(pacotes) > 0 else """Não há notícias no slideshow \
-                                            do 7segundos"""
+do 7segundos"""
 
 
 def ja_e_noticia_news():
@@ -82,7 +82,7 @@ def ja_e_noticia_news():
             dict = {'link': link, 'titulo': titulo}
             pacotes.append(dict)
     return pacotes if len(pacotes) > 0 else """Não há notícias no slideshow \
-                                            do Já é notícia"""
+do Já é notícia"""
 
 
 def formatar_msg(pacotes, site):
