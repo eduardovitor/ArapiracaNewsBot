@@ -5,7 +5,7 @@ from cachetools import TTLCache
 
 cache = TTLCache(maxsize=10, ttl=1800)
 
-API_KEY = os.environ["API_TELEGRAM_BOT"]
+API_KEY = os.environ["API_TELEGRAM_ARAPIRACA"]
 bot = telebot.TeleBot(API_KEY)
 msg = 'Olá, eu sou o ArapiracaNewsBot'
 msg2 = 'Criado por Eduardo Vítor, meu objetivo é fornecer as principais notícias dos jornais de Arapiraca de forma simples e sem esforço',
