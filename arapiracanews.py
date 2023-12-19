@@ -60,8 +60,8 @@ def site_sete_segundos_news():
         if validar_dados("https://www.{}".format(link), titulo):
             dict = {'link': link, 'titulo': titulo}
             pacotes.append(dict)
-    return pacotes if len(pacotes) > 0 else """Não há notícias no slideshow do
-                                              7segundos"""
+    return pacotes if len(pacotes) > 0 else """Não há notícias no slideshow \
+                                            do 7segundos"""
 
 
 def ja_e_noticia_news():
@@ -81,8 +81,8 @@ def ja_e_noticia_news():
         if validar_dados(link, titulo):
             dict = {'link': link, 'titulo': titulo}
             pacotes.append(dict)
-    return pacotes if len(pacotes) > 0 else """Não há notícias no slideshow
-                                              do Já é notícia"""
+    return pacotes if len(pacotes) > 0 else """Não há notícias no slideshow \
+                                            do Já é notícia"""
 
 
 def formatar_msg(pacotes, site):
